@@ -1,7 +1,4 @@
 <?php
-
-if(!$_SESSION['usuario']){
-    header('Location: register.php');
-}else{
-    require_once "index.php";
-}
+   $section = "views/home";
+    require_once "views/layout.php";
+ 
