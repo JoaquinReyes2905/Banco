@@ -1,0 +1,19 @@
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: white;
+}
+user agent stylesheet
+body {
+    display: block;
+    margin: 8px;
+}
+:root {
+    --login-bg: #fff3f3;
+    --title-bg: #f65757;
+    --button-bg: #fd0f0f;
+    --light-pink: #ff1717;
+    --image-bg: #ff8080;
+}
