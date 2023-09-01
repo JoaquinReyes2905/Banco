@@ -6,3 +6,11 @@
 .row{
     max-width: 100%;
 }
+
+#navbar{
+    background-color: rgb(14,115,145);
+}
+
+#text_navbar{
+    color: white;
+}
