@@ -1,7 +1,14 @@
 <?php
-$conn = mysqli_connect('localhost' , 'sa' , '123' , 'BancoNacion');
-if(!$conn){
-    "Fallo de consulta: " . mysqli_connect_error();
-    die();
+$serverName = "PC-F-019\SQLEXPRESS";
+$connectionOptions = array(
+    "Database" => "BancoNacion",
+    "Uid" => "sa",
+    "PWD" => "123"
+);
+$conn = sqlsrv_connect($serverName, $connectionOptions);
+
+if ($conn === false) {
+    die(print_r(sqlsrv_errors(), true));
 }
-echo $conn;
+
+?>
