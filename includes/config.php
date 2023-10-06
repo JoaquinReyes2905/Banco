@@ -1,16 +1,14 @@
 <?php
+define('DB_SERVER','localhost');
+define('DB_USUARIO','root');
+define('DB_PASSWORD','');
+define('DB_BASE','banconacion');
 
-$serverName = "DESKTOP-QB22C4J\SQLEXPRESS";
-$connectionOptions = array(
-    "Database" => "BancoNacion",
-    "Uid" => "sa",
-    "PWD" => "123",
-);
-$conn = sqlsrv_connect($serverName, $connectionOptions);
-
-if ($conn === false) {
-    die(print_r(sqlsrv_errors(), true));
-} 
+$conn = mysqli_connect(DB_SERVER,DB_USUARIO,DB_PASSWORD,DB_BASE);
+if(!$conn){
+    die('Error de Conexión (' . mysqli_connect_errno() . ') '
+        . mysqli_connect_error());
+}
 
 session_start();
 ?>
