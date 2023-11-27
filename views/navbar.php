@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="css/styles.css">
  <div class="container-fluid" id="navbar">
      <nav class="navbar navbar-expand-lg " id="navbar">
          <div class="container">
@@ -15,7 +16,7 @@
                      <li class="nav-item">
                          <a class="nav-link" href="#productos" id="text_navbar"><b>Productos</b></a>
                      </li>
-                     <?php if (isset($_SESSION['usuario'])) { ?>
+                     <?php if (isset($_SESSION['cliente'])) { ?>
                          <li class="nav-item">
                              <a class="nav-link" href="#" id="text_navbar"><b>Depositar</b></a>
                          </li>
@@ -31,10 +32,10 @@
                  <div class="ms-auto ">
 
                      <a href="register.php" class="btn btn-primary">Solicitud de Turnos</a>
-                     <?php if (isset($_SESSION['usuario'])) { ?>
+                     <?php if (isset($_SESSION['cliente'])) { ?>
                          <div class="btn-group">
-                             <button type="button" class="btn btn-danger"><?php echo $_SESSION['usuario']['nombre_completo']?></button>
-                             <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                             <button type="button" class="btn btn-cian"><?php echo $_SESSION['cliente']['nombre_completo']?></button>
+                             <button type="button" class="btn btn-cian dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
                                  <span class="visually-hidden">Toggle Dropdown</span>
                              </button>
                              <ul class="dropdown-menu">
@@ -48,7 +49,7 @@
                              </ul>
                          </div>
                      <?php } else { ?>
-                         <a href="login.php" class="btn btn-danger">Iniciar Sesion</a>
+                         <a href="login.php" class="btn btn-cian">Iniciar Sesion</a>
                      <?php } ?>
                  </div>
 

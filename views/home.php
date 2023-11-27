@@ -8,23 +8,16 @@
         <div class="carousel-item active">
             <img src="img/banner2.jpg" class="d-block w-100" style="filter: brightness(0.60); height: 550px;" alt="...">
             <div class="carousel-caption d-none d-md-block">
-                <h4>Explora nuestros productos y unite a la familia <b class="texto2 bg-light">#TODOROJO</b></h4>
-                <p>La tienda del club mas grande del continente</p>
-
             </div>
         </div>
         <div class="carousel-item">
             <img src="img/banner1.jpg" class="d-block w-100" alt="..." style="height: 550px;">
             <div class="carousel-caption d-none d-md-block">
-                <h4>Encontra Indumentaria y productos de excelente calidad</h4>
-                <p>Somos Independiente.<b class="texto2 bg-light">Paladar Negro</b></p>
             </div>
         </div>
         <div class="carousel-item">
             <img src="img/banner3.jpg" class="d-block w-100" alt="..." style="height: 550px;">
             <div class="carousel-caption d-none d-md-block">
-                <h4>Los mejores precios. Descuento abonando en efectivo</h4>
-                <p>Independiente es grande por su <b class="texto2 bg-light">Historia y su Gente</b></p>
             </div>
         </div>
     </div>
@@ -54,7 +47,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-md-4">
                 <div class="card">
                     <div class="img1"><img src="./img/MastercardDebitoDigitalBN.png" alt="camiseta2002" style="height: 250px;"></div>
@@ -63,7 +56,7 @@
 
             <div class="col-md-4">
                 <div class="card">
-                    <div class="img1"><img src="./img/BRCruzRoja_.png" alt="mochila"  style="height: 250px;"></div>
+                    <div class="img1"><img src="./img/BRCruzRoja_.png" alt="mochila" style="height: 250px;"></div>
                 </div>
             </div>
         </div>

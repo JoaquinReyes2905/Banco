@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-10-2023 a las 15:22:07
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Tiempo de generación: 27-11-2023 a las 07:43:06
+-- Versión del servidor: 10.4.22-MariaDB
+-- Versión de PHP: 8.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,7 +33,7 @@ CREATE TABLE `cargo` (
   `descripcion` text NOT NULL,
   `cant_emple` int(11) NOT NULL,
   `nivel_jerarquico` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `cargo`
@@ -80,19 +80,20 @@ CREATE TABLE `clientes` (
   `fecha_alta` date NOT NULL,
   `fecha_baja` date NOT NULL,
   `limite_credito` int(11) NOT NULL,
-  `deudas` char(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `deudas` char(10) NOT NULL,
+  `clave` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `clientes`
 --
 
-INSERT INTO `clientes` (`id_cliente`, `dni`, `genero`, `nombre_completo`, `fech_nacimiento`, `provincia`, `localidad`, `afiliado`, `num_cuenta_bancaria`, `direccion`, `correo`, `telefono`, `saldo`, `fecha_alta`, `fecha_baja`, `limite_credito`, `deudas`) VALUES
-(1, 629094813, 'M', 'Joaquin Torres Reyes', '2005-12-29', 'Chubut', 'Puerto Madryn', 'False', 225343227, 'Av. Riestra 321', 'joaquin@gmail.com', 1128479275, 100000, '2015-09-01', '0000-00-00', 100000, '30000'),
-(2, 571381042, 'F', 'Evelyn Reyes Ludmila', '2004-10-11', 'Rio Negro', 'Bariloche', 'True', 204846263, 'Av. Avellaneda 213', 'evelyn@gmail.com', 1156472943, 150000, '2014-01-01', '0000-00-00', 40000, ''),
-(3, 837402432, 'M', 'Lionel Messi Cuccitini', '2006-04-10', 'Tierra del Fuego', 'Ushuaia', 'False', 182458553, 'Catulo Castillo 231', 'messi@gmail.com', 1134554296, 0, '2020-12-01', '2020-12-02', 0, '0'),
-(4, 583475892, 'F', 'Mateo Retegui', '2001-11-23', 'Santa Cruz', 'Santa Cruz', 'True', 241343842, 'Esteban de Luca 21', 'mateo@gmail.com', 1102581724, 80000, '2022-01-01', '0000-00-00', 10, '200'),
-(5, 438559920, 'M', 'Gianluigi Buffon', '2003-03-24', 'Santa Fe', 'Rosario', 'False', 125911782, 'Alma Fuerte 666', 'buffon@gmail.com', 1174825824, 0, '2010-04-01', '2015-12-12', 0, '0');
+INSERT INTO `clientes` (`id_cliente`, `dni`, `genero`, `nombre_completo`, `fech_nacimiento`, `provincia`, `localidad`, `afiliado`, `num_cuenta_bancaria`, `direccion`, `correo`, `telefono`, `saldo`, `fecha_alta`, `fecha_baja`, `limite_credito`, `deudas`, `clave`) VALUES
+(1, 629094813, 'M', 'Joaquin Reyes', '2005-12-29', 'Chubut', 'Puerto Madryn', 'False', 225343227, 'Av. Riestra 321', 'joaquin@gmail.com', 1128479275, 100000, '2015-09-01', '0000-00-00', 100000, '30000', '81dc9bdb52d04dc20036dbd8313ed055'),
+(2, 571381042, 'F', 'Agustin COndori', '2004-10-11', 'Rio Negro', 'Bariloche', 'True', 204846263, 'Av. Avellaneda 213', 'evelyn@gmail.com', 1156472943, 150000, '2014-01-01', '0000-00-00', 40000, '', ''),
+(3, 837402432, 'M', 'Lionel Messi Cuccitini', '2006-04-10', 'Tierra del Fuego', 'Ushuaia', 'False', 182458553, 'Catulo Castillo 231', 'messi@gmail.com', 1134554296, 0, '2020-12-01', '2020-12-02', 0, '0', ''),
+(4, 583475892, 'F', 'Mateo Retegui', '2001-11-23', 'Santa Cruz', 'Santa Cruz', 'True', 241343842, 'Esteban de Luca 21', 'mateo@gmail.com', 1102581724, 80000, '2022-01-01', '0000-00-00', 10, '200', ''),
+(5, 438559920, 'M', 'Gianluigi Buffon', '2003-03-24', 'Santa Fe', 'Rosario', 'False', 125911782, 'Alma Fuerte 666', 'buffon@gmail.com', 1174825824, 0, '2010-04-01', '2015-12-12', 0, '0', '');
 
 -- --------------------------------------------------------
 
@@ -105,7 +106,7 @@ CREATE TABLE `cuenta` (
   `id_cajero` int(11) NOT NULL,
   `id_banco` int(11) NOT NULL,
   `id_cliente` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `cuenta`
@@ -131,7 +132,7 @@ CREATE TABLE `cuentas_bancarias` (
   `saldo` float NOT NULL,
   `fecha_alta` date NOT NULL,
   `fecha_baja` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `cuentas_bancarias`
@@ -166,7 +167,7 @@ CREATE TABLE `empleados` (
   `fecha_alta` date NOT NULL,
   `fecha_baja` date NOT NULL,
   `fec_nac` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `empleados`
@@ -193,7 +194,7 @@ CREATE TABLE `sucursales` (
   `cant_empleados` int(11) NOT NULL,
   `telefono` int(11) NOT NULL,
   `caja_fuerte` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `sucursales`
@@ -218,7 +219,7 @@ CREATE TABLE `supervisor` (
   `seccion` varchar(50) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `apellido` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `supervisor`
@@ -243,7 +244,7 @@ CREATE TABLE `tarjetas_credito` (
   `limite_credito` int(11) NOT NULL,
   `saldo` int(11) NOT NULL,
   `fec_vec` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `tarjetas_credito`
@@ -270,19 +271,20 @@ CREATE TABLE `transacciones` (
   `tipo_transacciones` varchar(50) NOT NULL,
   `monto` int(11) NOT NULL,
   `fecha` datetime NOT NULL,
-  `comision` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `comision` int(11) NOT NULL,
+  `estado` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `transacciones`
 --
 
-INSERT INTO `transacciones` (`id_transaccion`, `id_sucursal`, `id_cajero`, `num_cuenta_bancaria`, `tipo_transacciones`, `monto`, `fecha`, `comision`) VALUES
-(1, 1, 1, 1, 'prestamo', 100000, '2011-10-09 14:12:03', 20),
-(2, 2, 2, 2, 'deposito', 200000, '2004-02-12 18:11:03', 35),
-(3, 3, 3, 3, 'prestamo', 300000, '2020-02-03 09:12:05', 22),
-(4, 4, 4, 4, 'deposito', 400000, '2011-10-09 11:50:10', 69),
-(5, 5, 5, 5, 'prestamo', 500000, '2017-01-11 18:04:10', 0);
+INSERT INTO `transacciones` (`id_transaccion`, `id_sucursal`, `id_cajero`, `num_cuenta_bancaria`, `tipo_transacciones`, `monto`, `fecha`, `comision`, `estado`) VALUES
+(1, 1, 1, 225343227, 'prestamo', 100000, '2011-10-09 14:12:03', 20, 'terminado'),
+(2, 2, 2, 2, 'deposito', 200000, '2004-02-12 18:11:03', 35, ''),
+(3, 3, 3, 3, 'prestamo', 300000, '2020-02-03 09:12:05', 22, ''),
+(4, 4, 4, 4, 'deposito', 400000, '2011-10-09 11:50:10', 69, ''),
+(5, 5, 5, 5, 'prestamo', 500000, '2017-01-11 18:04:10', 0, '');
 
 --
 -- Índices para tablas volcadas

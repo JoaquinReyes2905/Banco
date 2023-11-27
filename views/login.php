@@ -16,19 +16,7 @@
 <body>
     <div class="login-container">
         <div class="login-info-container">
-            <h1 class="title">Log in with</h1>
-            <div class="social-login">
-                <div class="social-login-element">
-                    <img src="images/google.svg" alt="google-image">
-                    <span>Google</span>
-                </div>
-                <div class="social-login-element">
-                    <img src="images/facebook.svg" alt="facebook-image">
-                    <span>Facebook</span>
-                </div>
-            </div>
-            <p>or</p>
-
+            <h1 class="title">Bienvenido a Home Banking</h1>
             <?php if (isset($status) && $status == true) {  ?>
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     <div>
@@ -39,7 +27,7 @@
             <?php } ?>
             <form class="inputs-container" method="post">
                 <input class="input" type="text" placeholder="DNI" name="dni" required>
-                <input class="input" type="pass" placeholder="Clave de cuenta" name="pass" required>
+                <input class="input" type="password" placeholder="Clave de cuenta" name="pass" required>
                 <p>Forgot password? <span class="span">Click here</span></p>
                 <button class="btn" type="submit" name="submit">login</button>
                 <p>Don't have an account? <span class="span">Sign Up</span></p>
